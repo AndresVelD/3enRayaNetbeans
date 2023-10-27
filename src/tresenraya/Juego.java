@@ -2,6 +2,7 @@ package tresenraya;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 
@@ -29,26 +30,10 @@ public class Juego extends javax.swing.JFrame {
     
     j.iniciarPartida(matriz,jPanel4);
     
-        bt [0][0]=jButton1;
-        bt [0][1]=jButton2;
-        bt [0][2]=jButton3;
-        bt [1][0]=jButton4;
-        bt [1][1]=jButton5;
-        bt [1][2]=jButton6;
-        bt [2][0]=jButton7;
-        bt [2][1]=jButton8;
-        bt [2][2]=jButton9;  
     
-    jPanel4.addMouseListener(new MouseAdapter() {
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-         ponerFicha(matriz, x, y,bt);
-    }
  // Aquí puedes verificar la posición del clic y realizar acciones en tu juego de "3 en raya".
     
-});
+    }
     
   
     @SuppressWarnings("unchecked")
@@ -179,6 +164,11 @@ public class Juego extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -188,6 +178,11 @@ public class Juego extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -197,6 +192,11 @@ public class Juego extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -206,6 +206,11 @@ public class Juego extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         jButton6.setBorder(null);
         jButton6.setBorderPainted(false);
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -215,6 +220,11 @@ public class Juego extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -224,6 +234,11 @@ public class Juego extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -233,6 +248,11 @@ public class Juego extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         jButton7.setBorder(null);
         jButton7.setBorderPainted(false);
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -242,6 +262,11 @@ public class Juego extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         jButton8.setBorder(null);
         jButton8.setBorderPainted(false);
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -251,6 +276,11 @@ public class Juego extends javax.swing.JFrame {
         jButton9.setFont(new java.awt.Font("Maiandra GD", 1, 48)); // NOI18N
         jButton9.setBorder(null);
         jButton9.setBorderPainted(false);
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
@@ -392,6 +422,15 @@ public class Juego extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         iniciarJuego();
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        
+    JButton botonPresionado = (JButton) evt.getSource();
+    if (botonPresionado.getText().equals("")) {
+        botonPresionado.setText("X");
+    }
+
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * Vacía todos los botones
