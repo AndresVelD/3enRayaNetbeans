@@ -1,17 +1,12 @@
 package tresenraya;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-
 
 
 public class Juego extends javax.swing.JFrame {
     
     int matriz[][] = new int[3][3];
     LogicaJuego j;
-    javax.swing.JButton[][] bt = new javax.swing.JButton[3][3];
+     javax.swing.JButton[][] bt = new javax.swing.JButton[3][3];
 
     public Juego() {
          initComponents();
@@ -33,6 +28,18 @@ public class Juego extends javax.swing.JFrame {
     
  // Aquí puedes verificar la posición del clic y realizar acciones en tu juego de "3 en raya".
     
+     for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            matriz[i][j] = 0; // Puedes usar otros valores para representar el estado inicial si lo deseas
+        }
+        clearButtons();
+    }
+
+   
+    
+
+ 
+ 
     }
     
   
@@ -424,12 +431,7 @@ public class Juego extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        
-    JButton botonPresionado = (JButton) evt.getSource();
-    if (botonPresionado.getText().equals("")) {
-        botonPresionado.setText("X");
-    }
-
+    
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
@@ -507,10 +509,7 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel pX;
     // End of variables declaration//GEN-END:variables
 
-  
-
-    
-
+ 
    
 }
 
