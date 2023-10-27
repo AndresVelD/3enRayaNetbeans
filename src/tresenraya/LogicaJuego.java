@@ -164,19 +164,7 @@ public class LogicaJuego {
     public void ponerFicha(int matriz[][], int x, int y, javax.swing.JButton bt){
         // Inserta código aquí... 
        // matriz[][].setText("X");
-    
-        // Insertar ficha en la posición de la matriz
-        // mostrar la ficha correspondiente
-        
-    }
-    
-    /**
-     * Pintará la ficha en el tablero de juego visual, es decir, en el botón
-     * @param bt (Botón pulsado)
-     */
-    private void pintarFicha(javax.swing.JButton bt){
-        // Inserta código aquí...
-      /**    
+    /**    
         jp [0][0]=jButton1;
         matriz [0][1]=jButton2;
         matriz [0][2]=jButton3;
@@ -186,8 +174,9 @@ public class LogicaJuego {
         matriz [2][0]=jButton7;
         matriz [2][1]=jButton8;
         matriz [2][2]=jButton9;
+        // Insertar ficha en la posición de la matriz
+        // mostrar la ficha correspondiente
         
-      
         for (int i=0;i<3;i++){
             
             for (int j=0;j<3;j++){
@@ -206,18 +195,38 @@ public class LogicaJuego {
              model.marcarCasilla(i,j,matriz);
         }
     }
+    }
+    
+    /**
+     * Pintará la ficha en el tablero de juego visual, es decir, en el botón
+     * @param bt (Botón pulsado)
+     */
+    private void pintarFicha(javax.swing.JButton bt){
+        // Inserta código aquí...
+      
+        if(this.getTurno()==0){
+            bt.setForeground(Color.red);
+            bt.setText("X");
+            
+        }
+        else{
+            bt.setForeground(Color.blue);
+            bt.setText("O");
+        }
+       
+      
     }   
             
             
-        }
-        */
+        
+        
         
         
         // Si el turno es de 0 mostrará una X en rojo
 
          // Si el turno es de 1, mostrará una O en azul 
 
-    }
+    
     
   
     /**
