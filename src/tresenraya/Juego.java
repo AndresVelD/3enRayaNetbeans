@@ -1,6 +1,8 @@
 package tresenraya;
 
-import javax.swing.JPanel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JLabel;
 
 
 
@@ -8,7 +10,7 @@ public class Juego extends javax.swing.JFrame {
     
     int matriz[][] = new int[3][3];
     LogicaJuego j;
-   
+    javax.swing.JButton[][] bt = new javax.swing.JButton[3][3];
 
     public Juego() {
          initComponents();
@@ -24,10 +26,31 @@ public class Juego extends javax.swing.JFrame {
      */
     public void iniciarJuego(){
          // Inserta código aquí...
-      
+    
     j.iniciarPartida(matriz,jPanel4);
+    
+        bt [0][0]=jButton1;
+        bt [0][1]=jButton2;
+        bt [0][2]=jButton3;
+        bt [1][0]=jButton4;
+        bt [1][1]=jButton5;
+        bt [1][2]=jButton6;
+        bt [2][0]=jButton7;
+        bt [2][1]=jButton8;
+        bt [2][2]=jButton9;  
+    
+    jPanel4.addMouseListener(new MouseAdapter() {
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+         ponerFicha(matriz, x, y,bt);
     }
-
+ // Aquí puedes verificar la posición del clic y realizar acciones en tu juego de "3 en raya".
+    
+});
+    
+  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -444,4 +467,11 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel pO;
     private javax.swing.JLabel pX;
     // End of variables declaration//GEN-END:variables
+
+  
+
+    
+
+   
 }
+
