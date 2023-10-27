@@ -32,10 +32,10 @@ public class Juego extends javax.swing.JFrame {
         for (int j = 0; j < 3; j++) {
             matriz[i][j] = 0; // Puedes usar otros valores para representar el estado inicial si lo deseas
         }
-        clearButtons();
+       clearButtons();
     }
 
-   
+    
     
 
  
