@@ -3,6 +3,7 @@ package tresenraya;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 public class LogicaJuego {
     int turno, pX, pO; // Turno del jugador
@@ -126,15 +127,18 @@ public class LogicaJuego {
      * variable local String mensajeGanador
      */   
     public void mostrarVentanaGanador(javax.swing.JPanel jp) {
-        int opcionElegida;
-        String mensajeGanador;
-        // Inserta código aquí...
-        if (turno == 0) {
-            mensajeGanador = "Enhorabuena al Ganador X ¿Quieres continuar jugando?";
-        } else {
-            mensajeGanador = "Enhorabuena al Ganador O ¿Quieres continuar jugando?";
-        }
-    } 
+       String mensajeGanador = "¡Enhorabuena, jugador " + (turno == 0 ? "X" : "O") + "!\n¿Deseas continuar jugando?";
+    int opcionElegida = JOptionPane.showConfirmDialog(null, mensajeGanador, "Juego Terminado", JOptionPane.YES_NO_OPTION);
+
+    if (opcionElegida == JOptionPane.YES_OPTION) {
+        // Continuar jugando, iniciar una nueva partida
+       // iniciarPartida(matriz, jp);
+    } else {
+        // Salir del juego o realizar otra acción
+        // Puedes implementar esto según tus necesidades
+    }
+}
+     
     /**
      * Deshabilitará el botón para evitar que se vuelva a posicionar una ficha en ese hueco
      * @param bt (Botón seleccionado)
@@ -187,10 +191,15 @@ public class LogicaJuego {
      * @param lO (JLabel del jugador O)
      */
     public void ganador(javax.swing.JLabel lX, javax.swing.JLabel lO){
-        // Inserta código aquí...
-        
+        // Inserta código aquí...        
         // Incrementa jugador ganador e inserta resultado en jLabel    
-       
+       if(turno==0){
+           pX++;
+           lX.setText(String.valueOf(pX));
+       }else{
+           pO++;
+            lO.setText(String.valueOf(pO));
+       }
     }
     
     /**
