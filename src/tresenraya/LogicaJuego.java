@@ -148,6 +148,7 @@ public class LogicaJuego {
      */
     public void habilitarTablero( javax.swing.JPanel jp){
         // Inserta código aquí...
+        habilitado=false;
         // Bloquea todos los elementos del JPanel
         
     }
@@ -164,16 +165,8 @@ public class LogicaJuego {
     public void ponerFicha(int matriz[][], int x, int y, javax.swing.JButton bt){
         // Inserta código aquí... 
        // matriz[][].setText("X");
-    /**    
-        jp [0][0]=jButton1;
-        matriz [0][1]=jButton2;
-        matriz [0][2]=jButton3;
-        matriz [1][0]=jButton4;
-        matriz [1][1]=jButton5;
-        matriz [1][2]=jButton6;
-        matriz [2][0]=jButton7;
-        matriz [2][1]=jButton8;
-        matriz [2][2]=jButton9;
+       
+        /**
         // Insertar ficha en la posición de la matriz
         // mostrar la ficha correspondiente
         
@@ -196,39 +189,27 @@ public class LogicaJuego {
         }
     }
     }
-    
+    */
     /**
      * Pintará la ficha en el tablero de juego visual, es decir, en el botón
      * @param bt (Botón pulsado)
      */
-    private void pintarFicha(javax.swing.JButton bt){
+    private void pintarFicha(javax.swing.JButton bt) {
         // Inserta código aquí...
-      
-        if(this.getTurno()==0){
+        // Si el turno es de 0 mostrará una X en rojo
+        // Si el turno es de 1, mostrará una O en azul 
+        
+        if (this.getTurno() == 0) {
             bt.setForeground(Color.red);
             bt.setText("X");
-            
-        }
-        else{
+        } else {
             bt.setForeground(Color.blue);
             bt.setText("O");
         }
-       
-      
+
     }   
             
-            
-        
-        
-        
-        
-        // Si el turno es de 0 mostrará una X en rojo
-
-         // Si el turno es de 1, mostrará una O en azul 
-
-    
-    
-  
+   
     /**
      * Inicializa una nueva partida, reinicia la matriz (Tablero de juego) y habilita el tablero
      * 
