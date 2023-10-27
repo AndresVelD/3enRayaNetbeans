@@ -1,8 +1,6 @@
 package tresenraya;
 
 import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import javax.swing.JLabel;
 
 public class LogicaJuego {
     int turno, pX, pO; // Turno del jugador
@@ -57,8 +55,11 @@ public class LogicaJuego {
      */
     public void cambioTurno(){
         // Inserta código aquí...
-        
-    }
+        if (turno==0){
+            turno=2; //Cambiar turno al del jugador O.
+        }else
+            turno=1; //Cambiar turno al jugador X.
+    }//HECHO NO TOCAR MAS
     
     /**
      * Comprobar si se ha conseguido un tres en raya, 
@@ -80,10 +81,36 @@ public class LogicaJuego {
             si no, Comprobar en diagonal
         Si no hay tres en raya:
     */   
+    // Comprobar filas
+    for (int i = 0; i < 3; i++) {
+        if (matriz[i][0] == matriz[i][1] && matriz[i][1] == matriz[i][2]) {
+            return matriz[i][0];
+        }
+    }
+
+    // Comprobar columnas
+    for (int i = 0; i < 3; i++) {
+        if (matriz[0][i] == matriz[1][i] && matriz[1][i] == matriz[2][i]) {
+            return matriz[0][i];
+        }
+    }
+
+    // Comprobar diagonales
+    if (matriz[0][0] == matriz[1][1] && matriz[1][1] == matriz[2][2]) {
+        return matriz[0][0];
+    }
+
+    if (matriz[0][2] == matriz[1][1] && matriz[1][1] == matriz[2][0]) {
+        return matriz[0][2];
+    }
+
+
+
+   
          // Inserta código aquí...
         return 0;
-    }
     
+    } 
      /**
      * En caso de Ganador, mostrará la ventana, dentro del tablero; con el 
      * mensaje de enhorabuena al gandador; y le preguntará si desea continuar 
@@ -116,15 +143,22 @@ public class LogicaJuego {
             int matriz[][], javax.swing.JPanel jp, 
             javax.swing.JLabel lX, javax.swing.JLabel lO){
         // Inserta código aquí...
-        
+        Juego juego = new Juego();
         // Deshabilita el botón
-        
-        // Insertar la ficha en el botón
-               
+//        bt.setEnabled(false)
+//        // Insertar la ficha en el botón
+//        ponerFicha(matriz,x,y,bt,getTurno());       
         // Comprobar si se ha ganado la partida y mostrar la ventana con el
         // mensaje cuando corresponda
          
          // Deshabilitar tablero
+         habilitado=false;
+         habilitarTablero(jp);
+         
+//         mostrarVentanaGanador(jp);
+//         else
+//         cambioTurno();
+//         return 0;
          return turno;
     }
     
@@ -164,41 +198,25 @@ public class LogicaJuego {
      */
     public void ponerFicha(int matriz[][], int x, int y, javax.swing.JButton bt){
         // Inserta código aquí... 
-       // matriz[][].setText("X");
-       
+     //  pintarFicha(bt);
         /**
         // Insertar ficha en la posición de la matriz
         // mostrar la ficha correspondiente
         
-        for (int i=0;i<3;i++){
-            
-            for (int j=0;j<3;j++){
-                agregarEventoMouse(i,j);
-            }
-            
-          public javax.swing.JLabel [][] bt(){
-             return bt;
-            }   
-            
-          // ESTO NO DEBERIA DE ESTAR AQUI, SOLUCIONAR
-    private void agregarEventoMouse(int i, int j) {
-        JLabel CasillaActual = matriz[i][j];
-        CasillaActual.addMouseListener(new MouseAdapter()){
-        public void mouseClicked(MouseEvent e){
-             model.marcarCasilla(i,j,matriz);
-        }
-    }
-    }
+        
+      
+    
     */
     /**
      * Pintará la ficha en el tablero de juego visual, es decir, en el botón
      * @param bt (Botón pulsado)
      */
-    private void pintarFicha(javax.swing.JButton bt) {
+    /**
+    private void pintarFicha(javax.swing.JButton bt){
         // Inserta código aquí...
         // Si el turno es de 0 mostrará una X en rojo
         // Si el turno es de 1, mostrará una O en azul 
-        
+      
         if (this.getTurno() == 0) {
             bt.setForeground(Color.red);
             bt.setText("X");
@@ -206,10 +224,10 @@ public class LogicaJuego {
             bt.setForeground(Color.blue);
             bt.setText("O");
         }
-
+        //TERMINADO NO TOCAR
     }   
-            
-   
+    */      
+    }
     /**
      * Inicializa una nueva partida, reinicia la matriz (Tablero de juego) y habilita el tablero
      * 
