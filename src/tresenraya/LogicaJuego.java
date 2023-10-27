@@ -1,6 +1,8 @@
 package tresenraya;
 
 import java.awt.Color;
+import java.awt.Component;
+import javax.swing.JButton;
 
 public class LogicaJuego {
     int turno, pX, pO; // Turno del jugador
@@ -123,11 +125,16 @@ public class LogicaJuego {
      * @param jp (panel donde está situado el tablero)
      * variable local String mensajeGanador
      */   
-    public void mostrarVentanaGanador(javax.swing.JPanel jp){
+    public void mostrarVentanaGanador(javax.swing.JPanel jp) {
         int opcionElegida;
         String mensajeGanador;
         // Inserta código aquí...
-    }
+        if (turno == 0) {
+            mensajeGanador = "Enhorabuena al Ganador X ¿Quieres continuar jugando?";
+        } else {
+            mensajeGanador = "Enhorabuena al Ganador O ¿Quieres continuar jugando?";
+        }
+    } 
     /**
      * Deshabilitará el botón para evitar que se vuelva a posicionar una ficha en ese hueco
      * @param bt (Botón seleccionado)
@@ -143,25 +150,36 @@ public class LogicaJuego {
             int matriz[][], javax.swing.JPanel jp, 
             javax.swing.JLabel lX, javax.swing.JLabel lO){
         // Inserta código aquí...
-        Juego juego = new Juego();
         // Deshabilita el botón
-//        bt.setEnabled(false)
-//        // Insertar la ficha en el botón
-//        ponerFicha(matriz,x,y,bt,getTurno());       
+       // Insertar la ficha en el botón
         // Comprobar si se ha ganado la partida y mostrar la ventana con el
-        // mensaje cuando corresponda
-         
-         // Deshabilitar tablero
-         habilitado=false;
-         habilitarTablero(jp);
-         
-//         mostrarVentanaGanador(jp);
-//         else
-//         cambioTurno();
-//         return 0;
-         return turno;
-    }
+        // mensaje cuando corresponda         
+         // Deshabilitar tablero}
     
+      if (habilitado) {
+        // Llama al método para poner la ficha en la matriz y actualizar la representación visual en el botón
+        ponerFicha(matriz, x, y, bt);
+
+        // Comprueba si hay un ganador
+        int resultado = comprobarJuego(matriz);
+        if (resultado != 0) {
+            // Si hay un ganador, muestra la ventana de ganador y actualiza la puntuación
+            mostrarVentanaGanador(jp);
+            ganador(lX, lO);
+
+            // Deshabilita el tablero hasta que se inicie una nueva partida
+            habilitado = false;
+        } else {
+            // Si no hay un ganador, cambia el turno
+            cambioTurno();
+        }
+      
+        // Devuelve el nuevo turno
+        return turno;
+        
+      }
+        return turno;
+     }
     /**
      * Actualizar la puntuación de cada jugador al ganar la partida
      * Al finalizar el incremento de puntuación es necesario cambiar de turno
@@ -182,11 +200,15 @@ public class LogicaJuego {
      */
     public void habilitarTablero( javax.swing.JPanel jp){
         // Inserta código aquí...
-        habilitado=false;
         // Bloquea todos los elementos del JPanel
-        
+       for (Component component : jp.getComponents()) {
+        if (component instanceof JButton) {
+            JButton button = (JButton) component;
+            button.setEnabled(habilitado);
+        }
+       
     }
-    
+    }  
     /**
      * En ponerFicha, Insertaremos la ficha en la posición correspondiente de la matriz
      * Llamaremos al método pintarFicha
@@ -198,20 +220,27 @@ public class LogicaJuego {
      */
     public void ponerFicha(int matriz[][], int x, int y, javax.swing.JButton bt){
         // Inserta código aquí... 
-     //  pintarFicha(bt);
-        /**
+     
+        
         // Insertar ficha en la posición de la matriz
         // mostrar la ficha correspondiente
         
         
-      
+       if (matriz[x][y] == 0) {
+        // Asigna el valor correspondiente al jugador en la matriz
+        matriz[x][y] = (turno == 0) ? 1 : 2;
+        
+        // Llama al método para actualizar la representación visual en el botón
+        pintarFicha(bt);
+    }
+}
     
-    */
+    
     /**
      * Pintará la ficha en el tablero de juego visual, es decir, en el botón
      * @param bt (Botón pulsado)
      */
-    /**
+    
     private void pintarFicha(javax.swing.JButton bt){
         // Inserta código aquí...
         // Si el turno es de 0 mostrará una X en rojo
@@ -226,8 +255,8 @@ public class LogicaJuego {
         }
         //TERMINADO NO TOCAR
     }   
-    */      
-    }
+          
+    
     /**
      * Inicializa una nueva partida, reinicia la matriz (Tablero de juego) y habilita el tablero
      * 
