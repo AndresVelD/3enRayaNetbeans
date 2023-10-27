@@ -20,7 +20,7 @@ public class Juego extends javax.swing.JFrame {
      * Se tiene que llamar al método iniciar partida ubicado en LogicaJuego, pasando por parámetros
      * la matriz y jPanel4
      * 
-     * Llamaremos al método para que reinicie todos los botones.
+     * Llamaremos al método para que reinicie todos los botones. ESTO FALTA!
      */
     public void iniciarJuego(){
          // Inserta código aquí...

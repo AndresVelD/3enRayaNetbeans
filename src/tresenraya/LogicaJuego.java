@@ -1,6 +1,8 @@
 package tresenraya;
 
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import javax.swing.JLabel;
 
 public class LogicaJuego {
     int turno, pX, pO; // Turno del jugador
@@ -160,8 +162,9 @@ public class LogicaJuego {
      * turno  (para saber que ficha poner)
      */
     public void ponerFicha(int matriz[][], int x, int y, javax.swing.JButton bt){
-        // Inserta código aquí...        
-
+        // Inserta código aquí... 
+       // matriz[][].setText("X");
+    
         // Insertar ficha en la posición de la matriz
         // mostrar la ficha correspondiente
         
@@ -173,12 +176,50 @@ public class LogicaJuego {
      */
     private void pintarFicha(javax.swing.JButton bt){
         // Inserta código aquí...
+      /**    
+        jp [0][0]=jButton1;
+        matriz [0][1]=jButton2;
+        matriz [0][2]=jButton3;
+        matriz [1][0]=jButton4;
+        matriz [1][1]=jButton5;
+        matriz [1][2]=jButton6;
+        matriz [2][0]=jButton7;
+        matriz [2][1]=jButton8;
+        matriz [2][2]=jButton9;
+        
+      
+        for (int i=0;i<3;i++){
+            
+            for (int j=0;j<3;j++){
+                agregarEventoMouse(i,j);
+            }
+            
+          public javax.swing.JLabel [][] bt(){
+             return bt;
+            }   
+            
+          // ESTO NO DEBERIA DE ESTAR AQUI, SOLUCIONAR
+    private void agregarEventoMouse(int i, int j) {
+        JLabel CasillaActual = matriz[i][j];
+        CasillaActual.addMouseListener(new MouseAdapter()){
+        public void mouseClicked(MouseEvent e){
+             model.marcarCasilla(i,j,matriz);
+        }
+    }
+    }   
+            
+            
+        }
+        */
+        
+        
         // Si el turno es de 0 mostrará una X en rojo
 
          // Si el turno es de 1, mostrará una O en azul 
 
     }
     
+  
     /**
      * Inicializa una nueva partida, reinicia la matriz (Tablero de juego) y habilita el tablero
      * 
@@ -199,4 +240,5 @@ public class LogicaJuego {
          habilitado = true;
          habilitarTablero(jp);
     }
+   
 }
