@@ -59,9 +59,9 @@ public class LogicaJuego {
     public void cambioTurno(){
         // Inserta código aquí...
         if (turno==0){
-            turno=2; //Cambiar turno al del jugador O.
+            turno=1; //Cambiar turno al del jugador O.
         }else
-            turno=1; //Cambiar turno al jugador X.
+            turno=0; //Cambiar turno al jugador X.
     }//HECHO NO TOCAR MAS
     
     /**
@@ -84,6 +84,7 @@ public class LogicaJuego {
             si no, Comprobar en diagonal
         Si no hay tres en raya:
     */   
+    // Inserta código aquí...
     // Comprobar filas
     for (int i = 0; i < 3; i++) {
         if (matriz[i][0] == matriz[i][1] && matriz[i][1] == matriz[i][2]) {
@@ -110,7 +111,7 @@ public class LogicaJuego {
 
 
    
-         // Inserta código aquí...
+         
         return 0;
     
     } 
@@ -127,17 +128,17 @@ public class LogicaJuego {
      * variable local String mensajeGanador
      */   
     public void mostrarVentanaGanador(javax.swing.JPanel jp) {
-       String mensajeGanador = "¡Enhorabuena, jugador " + (turno == 0 ? "X" : "O") + "!\n¿Deseas continuar jugando?";
-    int opcionElegida = JOptionPane.showConfirmDialog(null, mensajeGanador, "Juego Terminado", JOptionPane.YES_NO_OPTION);
+        String mensajeGanador = "¡Enhorabuena, jugador " + (turno == 0 ? "X" : "O") + "!\n¿Deseas continuar jugando?";
+        int opcionElegida = JOptionPane.showConfirmDialog(null, mensajeGanador, "Juego Terminado", JOptionPane.YES_NO_OPTION);
 
-    if (opcionElegida == JOptionPane.YES_OPTION) {
-        // Continuar jugando, iniciar una nueva partida
-       // iniciarPartida(matriz, jp);
-    } else {
-        // Salir del juego o realizar otra acción
-        // Puedes implementar esto según tus necesidades
+        if (opcionElegida == JOptionPane.YES_OPTION) {
+            // Continuar jugando, iniciar una nueva partida
+            // iniciarPartida(matriz, jp);
+        } else {
+            // Salir del juego o realizar otra acción
+            // Puedes implementar esto según tus necesidades
+        }
     }
-}
      
     /**
      * Deshabilitará el botón para evitar que se vuelva a posicionar una ficha en ese hueco
