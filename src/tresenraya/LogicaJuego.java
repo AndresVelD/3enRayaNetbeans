@@ -3,6 +3,7 @@ package tresenraya;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class LogicaJuego {
@@ -56,13 +57,14 @@ public class LogicaJuego {
     /**
      * Llamaremos a este método para cambiar de turno
      */
-    public void cambioTurno(){
+    public void cambioTurno() {
         // Inserta código aquí...
-        if (turno==0){
-            turno=1; //Cambiar turno al del jugador O.
-        }else
-            turno=0; //Cambiar turno al jugador X.
-    }//HECHO NO TOCAR MAS
+        if (turno == 0) {
+            turno = 1; //Cambiar turno al del jugador O.
+        } else {
+            turno = 0; //Cambiar turno al jugador X.
+        }
+    }
     
     /**
      * Comprobar si se ha conseguido un tres en raya, 
@@ -129,14 +131,16 @@ public class LogicaJuego {
      */   
     public void mostrarVentanaGanador(javax.swing.JPanel jp) {
         String mensajeGanador = "¡Enhorabuena, jugador " + (turno == 0 ? "X" : "O") + "!\n¿Deseas continuar jugando?";
-        int opcionElegida = JOptionPane.showConfirmDialog(null, mensajeGanador, "Juego Terminado", JOptionPane.YES_NO_OPTION);
+        int opcionElegida = JOptionPane.showConfirmDialog(null, mensajeGanador, "Enhorabuena Ganador", JOptionPane.YES_NO_OPTION);
 
         if (opcionElegida == JOptionPane.YES_OPTION) {
             // Continuar jugando, iniciar una nueva partida
-            // iniciarPartida(matriz, jp);
+            // El maestro en la videotutoria lo tiene vacio, porque no hace nada.
         } else {
-            // Salir del juego o realizar otra acción
+            // Salir del juego o realizar otra acción(poner que cierre la aplicacion)
             // Puedes implementar esto según tus necesidades
+             JFrame frame = (JFrame) jp.getTopLevelAncestor();
+             frame.dispose();
         }
     }
      
@@ -263,7 +267,7 @@ public class LogicaJuego {
             bt.setForeground(Color.blue);
             bt.setText("O");
         }
-        //TERMINADO NO TOCAR
+        
     }   
           
     
