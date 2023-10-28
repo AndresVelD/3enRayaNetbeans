@@ -206,6 +206,7 @@ public class LogicaJuego {
            pO++;
             lO.setText(String.valueOf(pO));
        }
+       cambioTurno();
     }
     
     /**
