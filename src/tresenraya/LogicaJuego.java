@@ -139,8 +139,9 @@ public class LogicaJuego {
         } else {
             // Salir del juego o realizar otra acción(poner que cierre la aplicacion)
             // Puedes implementar esto según tus necesidades
-             JFrame frame = (JFrame) jp.getTopLevelAncestor();
-             frame.dispose();
+//             JFrame frame = (JFrame) jp.getTopLevelAncestor();
+//             frame.dispose();
+            System.exit(0);
         }
     }
      
