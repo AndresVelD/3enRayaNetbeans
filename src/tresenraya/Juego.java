@@ -1,45 +1,37 @@
 package tresenraya;
 
-
-
 public class Juego extends javax.swing.JFrame {
-    
+
     int matriz[][] = new int[3][3];
     LogicaJuego j;
-     javax.swing.JButton[][] bt = new javax.swing.JButton[3][3];
+    javax.swing.JButton[][] bt = new javax.swing.JButton[3][3];
 
     public Juego() {
-         initComponents();
-         this.j = new LogicaJuego(0, 0, 0);
-         iniciarJuego();
+        initComponents();
+        this.j = new LogicaJuego(0, 0, 0);
+        iniciarJuego();
     }
     
     /**
-     * Se tiene que llamar al método iniciar partida ubicado en LogicaJuego, pasando por parámetros
-     * la matriz y jPanel4
-     * 
-     * Llamaremos al método para que reinicie todos los botones. ESTO FALTA!
+     * Se tiene que llamar al método iniciar partida ubicado en LogicaJuego,
+     * pasando por parámetros la matriz y jPanel4
+     *
+     * Llamaremos al método para que reinicie todos los botones.
      */
-    public void iniciarJuego(){
-         // Inserta código aquí...
-    
-    j.iniciarPartida(matriz,jPanel4);
-    
-    
- // Aquí puedes verificar la posición del clic y realizar acciones en tu juego de "3 en raya".
-    
-     for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            matriz[i][j] = 0; // Puedes usar otros valores para representar el estado inicial si lo deseas
+    public void iniciarJuego() {
+        // Inserta código aquí...
+
+        j.iniciarPartida(matriz, jPanel4);
+
+        // verificamos la posicion del clic
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matriz[i][j] = 0;
+            }
+            clearButtons();
         }
-       clearButtons();
-    }
 
     
-    
-
- 
- 
     }
     
   
@@ -508,8 +500,5 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel pO;
     private javax.swing.JLabel pX;
     // End of variables declaration//GEN-END:variables
-
  
-   
 }
-
