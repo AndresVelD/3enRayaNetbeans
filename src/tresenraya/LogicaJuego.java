@@ -130,7 +130,7 @@ public class LogicaJuego {
      * mensajeGanador
      */   
     public void mostrarVentanaGanador(javax.swing.JPanel jp) {
-        String mensajeGanador = "¡Enhorabuena, jugador " + (turno == 0 ? "X" : "O") + "!\n¿Deseas continuar jugando?";
+        String mensajeGanador = "Soy andresVelascoOnliner,\ndoy la enhorabuena a las " + (turno == 0 ? "X" : "O") + "!!!\n¿Quieres continuar jugando?";
         int opcionElegida = JOptionPane.showConfirmDialog(jp, mensajeGanador, "Enhorabuena Ganador", JOptionPane.YES_NO_OPTION);
 
         if (opcionElegida == JOptionPane.YES_OPTION) {
