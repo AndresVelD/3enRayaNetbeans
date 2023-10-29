@@ -261,10 +261,10 @@ public class LogicaJuego {
         // Si el turno es de 1, mostrará una O en azul 
 
         if (this.getTurno() == 0) {
-            bt.setForeground(Color.red);
+            bt.setForeground(Color.RED);
             bt.setText("X");
         } else {
-            bt.setForeground(Color.blue);
+            bt.setForeground(Color.BLUE);
             bt.setText("O");
         }
 
