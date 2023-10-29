@@ -131,7 +131,7 @@ public class LogicaJuego {
      */   
     public void mostrarVentanaGanador(javax.swing.JPanel jp) {
         String mensajeGanador = "¡Enhorabuena, jugador " + (turno == 0 ? "X" : "O") + "!\n¿Deseas continuar jugando?";
-        int opcionElegida = JOptionPane.showConfirmDialog(null, mensajeGanador, "Enhorabuena Ganador", JOptionPane.YES_NO_OPTION);
+        int opcionElegida = JOptionPane.showConfirmDialog(jp, mensajeGanador, "Enhorabuena Ganador", JOptionPane.YES_NO_OPTION);
 
         if (opcionElegida == JOptionPane.YES_OPTION) {
             // Continuar jugando, iniciar una nueva partida
