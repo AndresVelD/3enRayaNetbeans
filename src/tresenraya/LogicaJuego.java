@@ -91,16 +91,16 @@ public class LogicaJuego {
         Si no hay tres en raya:
          */
         // Inserta código aquí...
-        // Comprobar filas
+        // Comprobar horizontal
         for (int i = 0; i < 3; i++) {
-            if (matriz[i][0] == matriz[i][1] && matriz[i][1] == matriz[i][2]) {
+            if (matriz[i][0] != 0 && matriz[i][0] == matriz[i][1] && matriz[i][1] == matriz[i][2]) {
                 return matriz[i][0];
             }
         }
 
-        // Comprobar columnas
+        // Comprobar vertical
         for (int i = 0; i < 3; i++) {
-            if (matriz[0][i] == matriz[1][i] && matriz[1][i] == matriz[2][i]) {
+            if (matriz[0][i] != 0 && matriz[0][i] == matriz[1][i] && matriz[1][i] == matriz[2][i]) {
                 return matriz[0][i];
             }
         }
